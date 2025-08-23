@@ -1,27 +1,31 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
+
 @font-face {
     font-family: 'Lemon tuesday';
     src: url('../assets/fonts/LemonTuesday.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
+
 @font-face {
     font-family: 'antio-regular';
     src: url('../assets/fonts/antio-regular.woff') format('woff');
-    src: url('../assets/fonts/antio-regular.woff') format('woff2');
+    src: url('../assets/fonts/antio-regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
+
 body {
     min-height: 100vh;
     background: url('../assets/BG-ORGANY.png') no-repeat center center fixed;
     background-size: cover;
     margin: 0;
     padding: 0;
-    font-family: 'antio-regular', sans-serif;
+    font-family: 'Lemon tuesday';
     display: flex;
     flex-direction: column;
     background-size: 150% auto;
@@ -36,32 +40,33 @@ main {
     max-width: 1700px;
     margin: 0 auto;
     border-radius: 20px;
-
     position: relative;
     top: 3vh;
 }
 
+.content-section {
+    position: relative;
+    height: 100%;
+}
 
 aside {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center; 
-    padding: 15px ;
+    padding: 15px;
     height: 100%;
     width: 100%;
-    
 }
 
 .aside2 {
     display: flex;
     flex-direction: column;
-    justify-content: bottom;
-    align-items: bottom; 
-    padding: 15px ;
-    height: 50%;
+    justify-content: center;
+    align-items: center; 
+    padding: 15px;
+    height: 100%;
     width: 100%;
-    
 }
 
 #title {
@@ -70,46 +75,64 @@ aside {
     justify-content: center;
     align-items: center; 
 }
+
 #logo {
     width: 120%;
     height: auto;
     margin-bottom: 10px;
 }
+
 .height{
     font-size: 64px;
+    text-align: center;
+    text-align: justify;
 }
 
 #buttons {
     display: flex;
     flex-direction: column;
-    align-items: bottom;
-    text-align: right;
-    justify-content: bottom;
-    gap: 20px;
-    height: auto;
-    width: auto;
-}
-#buttons2 {
-    display: flex;
-    flex-direction: column;
-    align-items: right;
-    text-align: right;
-    justify-content: right;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
     gap: 20px;
     height: auto;
     width: auto;
 }
 
-.menu{
+.buttons {
     display: flex;
     flex-direction: column;
-    align-items: right;
-    text-align: right;
-    justify-content: right;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
     gap: 20px;
-
+    height: 150%;
+    width: 150%;
+}
+.menu-main-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding-right: 70px;
 }
 
+.menu-main-button button {
+    font-family: 'antio-regular', sans-serif;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    background-color: #e9d3af;
+    color: black;
+    transition: background 0.3s;
+    box-shadow: 0 2px 8px #0001;
+    letter-spacing: 0.1em;
+}
+
+.menu-main-button button:hover {
+    background-color: #d6b77b;
+}
 
 button {
     font-family: 'antio-regular', sans-serif;
@@ -135,7 +158,6 @@ section.left-bg {
     flex-direction: column;
     justify-content: center;
     align-items: center; 
-    float: right;
 }
 
 footer {
@@ -153,7 +175,6 @@ footer {
     margin: 0 auto;
 }
 
-
 @media (max-width: 900px) {
     main {
         grid-template-columns: 1fr;
@@ -161,10 +182,23 @@ footer {
         width: 98vw;
         border-radius: 0;
     }
+    
     section.left-bg {
         display: none;
     }
+    
     aside {
         padding: 20px 5vw;
+    }
+    
+    .menu-main-button {
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        z-index: 1000;
+    }
+    
+    .content-section {
+        padding-bottom: 80px;
     }
 }
