@@ -10,7 +10,10 @@
 }
 @font-face {
     font-family: 'antio-regular';
+    src: url('../assets/fonts/antio-regular.woff') format('woff');
     src: url('../assets/fonts/antio-regular.woff') format('woff2');
+    font-weight: normal;
+    font-style: normal;
 }
 body {
     min-height: 100vh;
@@ -37,11 +40,7 @@ main {
     position: relative;
     top: 3vh;
 }
-.container {
-    box-shadow: 0 4px 12px #0003;
-    background: #ffffff86;
-    border-radius: 20px;
-}
+
 
 aside {
     display: flex;
@@ -50,6 +49,17 @@ aside {
     align-items: center; 
     padding: 15px ;
     height: 100%;
+    width: 100%;
+    
+}
+
+.aside2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: bottom;
+    align-items: bottom; 
+    padding: 15px ;
+    height: 50%;
     width: 100%;
     
 }
@@ -90,7 +100,7 @@ aside {
     width: auto;
 }
 
-#menu{
+.menu{
     display: flex;
     flex-direction: column;
     align-items: right;
@@ -125,6 +135,7 @@ section.left-bg {
     flex-direction: column;
     justify-content: center;
     align-items: center; 
+    float: right;
 }
 
 footer {
