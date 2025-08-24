@@ -5,14 +5,14 @@
 }
 @font-face {
     font-family: 'Lemon-tuesday';
-    src: url('../assets/fonts/LemonTuesday.otf') format('opentype');
+    src: url('../fonts/LemonTuesday.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'antio-regular';
-    src: url('../assets/fonts/antio-regular.otf') format('opentype');
+    src: url('../fonts/antio-regular.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
