@@ -6,15 +6,14 @@
 
 @font-face {
     font-family: 'Lemon-tuesday';
-    src: url('../assets/fonts/LemonTuesday.ttf') format('truetype');
+    src: url('../assets/fonts/LemonTuesday.otf');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'antio-regular';
-    src: url('../assets/fonts/antio-regular.woff') format('woff');
-    src: url('../assets/fonts/antio-regular.woff2') format('woff2');
+    src: url('../assets/fonts/antio-regular.otf');
     font-weight: normal;
     font-style: normal;
 }
