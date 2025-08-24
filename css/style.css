@@ -78,6 +78,8 @@ aside {
     flex-direction: column;
     justify-content: center;
     align-items: center; 
+    height: 40%;
+    width: 40%;
 }
 
 #logo {
