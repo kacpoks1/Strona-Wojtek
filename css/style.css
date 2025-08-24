@@ -125,6 +125,14 @@ aside {
     height: 300px;
 
 }
+.menu-main-video {
+    width: 50px;
+    max-width: 18vw;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #0002;
+    display: block;
+}
 
 
 
@@ -194,5 +202,9 @@ footer {
     
     .content-section {
         padding-bottom: 80px;
+    }
+    .menu-main-video {
+        width: 60px;
+        max-width: 22vw;
     }
 }
