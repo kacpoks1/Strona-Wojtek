@@ -5,7 +5,7 @@
 }
 
 @font-face {
-    font-family: 'Lemon tuesday';
+    font-family: 'Lemon-tuesday';
     src: url('../assets/fonts/LemonTuesday.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
@@ -42,6 +42,9 @@ main {
     border-radius: 20px;
     position: relative;
     top: 3vh;
+}
+h1{
+    font-family: Lemon-tuesday, sans-serif;
 }
 
 .content-section {
