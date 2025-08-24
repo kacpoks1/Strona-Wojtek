@@ -6,14 +6,14 @@
 
 @font-face {
     font-family: 'Lemon-tuesday';
-    src: url('../assets/fonts/LemonTuesday.otf');
+    src: url('../assets/fonts/LemonTuesday.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'antio-regular';
-    src: url('../assets/fonts/antio-regular.otf');
+    src: url('../assets/fonts/antio-regular.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
@@ -43,7 +43,7 @@ main {
     top: 3vh;
 }
 h1{
-    font-family: Lemon-tuesday;
+    font-family: 'Lemon-tuesday';
 }
 
 .content-section {
