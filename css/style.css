@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 @font-face {
     font-family: 'Lemon-tuesday';
     src: url('../assets/fonts/LemonTuesday.otf') format('opentype');
