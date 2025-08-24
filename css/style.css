@@ -122,11 +122,13 @@ aside {
     bottom: 20px;
     right: 20px;
     padding-right: 30px;
-
+    height: 30%;
 
 }
 
-
+video{
+    height: auto;
+}
 
 
 button {
