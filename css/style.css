@@ -50,7 +50,7 @@ main {
 }
 #menug{
     width: 50%;
-    height: auto;
+    height: 50%;
 }
 
 aside {
@@ -120,23 +120,8 @@ aside {
     padding-right: 70px;
 }
 
-.menu-main-button button {
-    font-family: 'antio-regular', sans-serif;
-    font-size: clamp(1rem, 2vw, 1.5rem);
-    padding: 15px 30px;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    background-color: #e9d3af;
-    color: black;
-    transition: background 0.3s;
-    box-shadow: 0 2px 8px #0001;
-    letter-spacing: 0.1em;
-}
 
-.menu-main-button button:hover {
-    background-color: #d6b77b;
-}
+
 
 button {
     font-family: 'antio-regular', sans-serif;
