@@ -17,12 +17,21 @@
     font-weight: normal;
     font-style: normal;
 }
-
+#piszczalki {
+    background: url('/assets/budowa/photo/piszczalki-zdjecie@1x.png') no-repeat center center fixed;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lemon-tuesday', cursive, sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-size: 90% auto;
+    background-position:  center;
+}
 body {
     min-height: 100vh;
     background: url('/assets/BG-ORGANY.png') no-repeat center center fixed,
     rgba(255, 255, 255, 0.61);
-    backdrop-filter: blur(3px);
+
     background-blend-mode: multiply;
     background-size: cover;
     margin: 0;
@@ -33,6 +42,8 @@ body {
     background-size: 150% auto;
     background-position: right center;
 }
+
+
 
 main {
     display: grid;
@@ -53,7 +64,7 @@ main {
     justify-items: center;
     height: 90vh;
     width: 100vw;
-    max-width: 1700px;
+    max-width: 1800px;
     margin: 0 auto;
     gap: 1vw;
 }
@@ -129,6 +140,22 @@ main {
     margin-left: 4vh;
 }
 
+.budowa-tekst2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Wycentrowanie zawartości w pionie */
+    justify-content: center;
+    background: rgba(255,255,255,0.6);
+    padding: 2vw 2vw 1vw 2vw;
+    border-radius: 16px;
+    max-width: 700px;
+    min-width: 320px;
+    box-shadow: 0 2px 16px #0001;
+    margin-left: 3vh;
+    margin-right: 3vh;
+    height: 85vh;
+}
+
 .budowa-tekst h1 {
     font-family: 'antio-regular', sans-serif;
     font-size: 2.5rem;
@@ -144,6 +171,31 @@ main {
     left: 2vh;
     line-height: 1.6;
     text-align: left;
+}
+
+.budowa-tekst2 h1 {
+    font-family: 'antio-regular', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.1em;
+    text-align: left;
+    padding-top: 1.2rem;
+}
+
+.budowa-tekst2 p {
+    font-family: 'antio-regular', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    left: 2vh;
+    line-height: 1.6;
+    text-align: left;
+}
+.budowa-tekst2 .powrot-btn video{
+    padding-top: 40%;
+    margin-left: -50%;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
 }
 
 .powrot-btn {
@@ -205,6 +257,16 @@ main {
     filter: brightness(1.2);
 }
 
+#tytył h1 {
+    font-family: 'antio-regular', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.1em;
+    text-align: left;
+    padding-top: 1.2rem;
+    color: white;
+}
+
 /* Usuwa obramowanie z buttona z video */
 button:has(video) {
     border: none !important;
@@ -214,7 +276,6 @@ button:has(video) {
     margin: 0 !important;
     scale: 0.5 !important;
 }
-
 /* Responsywność */
 @media (max-width: 900px) {
     main, .budowa-grid {
