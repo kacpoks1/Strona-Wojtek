@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Lemon-tuesday';
+    src: url('/fonts/lemon_tuesday/Lemon\ Tuesday.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'antio-regular';
+    src: url('/fonts/antio-regular/Antio-Regular/Antio\ Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    min-height: 100vh;
+    background: url('/assets/BG-ORGANY.png') no-repeat center center fixed,
+    rgba(255, 255, 255, 0.61);
+    backdrop-filter: blur(3px);
+    background-blend-mode: multiply;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lemon-tuesday', cursive, sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-size: 150% auto;
+    background-position: right center;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 90vh;
+    width: 100vw;
+    max-width: 1700px;
+    margin: 0 auto;
+    border-radius: 20px;
+    position: relative;
+    top: 3vh;
+}
+
+.budowa-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.5fr 0.5fr 2fr;
+    align-items: center;
+    justify-items: center;
+    height: 90vh;
+    width: 100vw;
+    max-width: 1700px;
+    margin: 0 auto;
+    gap: 1vw;
+}
+
+.kolumna-video {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    padding-top: 5vh;
+}
+
+.nacisnij-numer-video {
+    width: 60vw;
+    max-width: 300px;
+    min-width: 150px;
+    aspect-ratio: 16/9;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px #0002;
+    z-index: 10;
+}
+
+.kolumna-numery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.numery-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+}
+
+.numer {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #b86d1c;
+    color: #fff;
+    font-family: 'antio-regular', sans-serif;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 3;
+    transition: filter 0.2s;
+    margin: 0 auto;
+}
+.numer:hover {
+    filter: brightness(1.2);
+}
+
+.budowa-tekst {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Wycentrowanie zawartości w pionie */
+    justify-content: center;
+    background: rgba(255,255,255,0.6);
+    padding: 2vw 2vw 1vw 2vw;
+    border-radius: 16px;
+    max-width: 500px;
+    min-width: 320px;
+    box-shadow: 0 2px 16px #0001;
+    margin-left: 4vh;
+}
+
+.budowa-tekst h1 {
+    font-family: 'antio-regular', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.1em;
+    text-align: left;
+}
+
+.budowa-tekst p {
+    font-family: 'antio-regular', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    left: 2vh;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.powrot-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none !important;
+    box-shadow: none !important;
+    background: none !important;
+    padding: 0 !important;
+    margin: 1.5rem 0 0 0;
+    cursor: pointer;
+}
+
+.powrot-btn:hover {
+    filter: brightness(0.9);
+}
+
+.budowa-grafika {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.grafika-wrap {
+    position: relative;
+    width: 80vw;
+    max-width: 700px;
+    aspect-ratio: 1/1.2;
+    margin: 0 ;
+}
+
+#organy {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+#organy-linie.linie {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+    display: block;
+}
+
+/* Numerki na grafice (przykład, jeśli chcesz dodać) */
+.numer {
+    position: static; /* lub usuń position:absolute jeśli było */
+    margin: 0;
+}
+.numer:hover {
+    filter: brightness(1.2);
+}
+
+/* Usuwa obramowanie z buttona z video */
+button:has(video) {
+    border: none !important;
+    box-shadow: none !important;
+    background: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    scale: 0.5 !important;
+}
+
+/* Responsywność */
+@media (max-width: 900px) {
+    main, .budowa-grid {
+        grid-template-columns: 1fr;
+        height: auto;
+        gap: 4vw;
+    }
+    .budowa-tekst {
+        max-width: 90vw;
+        min-width: unset;
+        margin: 0 auto;
+        padding: 6vw 4vw 2vw 4vw;
+    }
+    .grafika-wrap {
+        width: 90vw;
+        max-width: 98vw;
+        aspect-ratio: 1/1.2;
+    }
+}

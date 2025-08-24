@@ -119,13 +119,14 @@ aside {
 }
 .menu-main-button {
     position: absolute;
-    right: 10px;
-    height: 300px;
-
+    bottom: 5vh;   /* Na dole */
+    right: 1vw;    /* Bardziej na prawo */
+    height: 100px;
+    z-index: 1000;
 
 }
 .menu-main-video {
-    width: 80%;
+    width: 75%;
     max-width: 18vw;
     height: auto;
 }
