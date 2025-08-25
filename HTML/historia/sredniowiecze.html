@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dźwięk Dziedzictwa</title>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Lemon-tuesday';
+    src: url('/fonts/lemon_tuesday/Lemon\ Tuesday.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'antio-regular';
+    src: url('/fonts/antio-regular/Antio-Regular/Antio\ Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+        font-family: 'capsuula';
+        src: url('/fonts/Capsuula/Capsuula.ttf') format('trueType');
+        font-weight: normal;
+        font-style: normal;
+    }
+#piszczalki {
+    background: url('/assets/budowa/photo/piszczalki-zdjecie@1x.png') no-repeat center center fixed;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lemon-tuesday', cursive, sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-size: 90% auto;
+    background-position:  center;
+}
+body {
+    min-height: 100vh;
+    background: url('/assets/BG-ORGANY.png') no-repeat center center fixed,
+    rgba(255, 255, 255, 0.61);
+
+    background-blend-mode: multiply;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lemon-tuesday', cursive, sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-size: 150% auto;
+    background-position: right center;
+}
+
+
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 90vh;
+    width: 100vw;
+    max-width: 1700px;
+    margin: 0 auto;
+    border-radius: 20px;
+    position: relative;
+    top: 3vh;
+}
+
+.budowa-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1.2fr;
+    align-items: center;
+    justify-items: center;
+    height: 90vh;
+    width: 100vw;
+    max-width: 1800px;
+    margin: 0 auto;
+    gap: 1vw;
+}
+
+.kolumna-video {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    padding-top: 5vh;
+}
+
+.nacisnij-numer-video {
+    width: 60vw;
+    max-width: 300px;
+    min-width: 150px;
+    aspect-ratio: 16/9;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px #0002;
+    z-index: 10;
+}
+
+.kolumna-numery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.numery-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+}
+
+.numer {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #b86d1c;
+    color: #fff;
+    font-family: 'antio-regular', sans-serif;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 3;
+    transition: filter 0.2s;
+    margin: 0 auto;
+}
+.numer:hover {
+    filter: brightness(1.2);
+}
+
+.budowa-tekst {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Wycentrowanie zawartości w pionie */
+    justify-content: center;
+    background: rgba(255,255,255,0.6);
+    padding: 2vw 2vw 1vw 2vw;
+    border-radius: 16px;
+    max-width: 900px;
+    min-width: 320px;
+    box-shadow: 0 2px 16px #0001;
+    margin-left: 4vh;
+}
+
+.budowa-tekst2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Wycentrowanie zawartości w pionie */
+    justify-content: center;
+    font-family: 'antio-regular', sans-serif;
+    padding: 2vw 2vw 1vw 2vw;
+    border-radius: 16px;
+    max-width: 1000px;
+    min-width: 320px;
+    margin-left: 3vh;
+    height: 85vh;
+}
+
+.budowa-tekst h1 {
+    font-family: 'antio-regular', sans-serif;
+    font-size: 3.5rem;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.1em;
+    text-align: left;
+}
+
+.budowa-tekst p {
+    font-family: 'antio-regular', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    left: 2vh;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.budowa-tekst2 h1 {
+    font-family: 'antio-regular', sans-serif;
+    font-size: 3.5rem;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.6em;
+    text-align: left;
+    padding-top: 1.2rem;
+    align-items:start !important; 
+}
+
+.budowa-tekst2 p {
+    font-family: 'antio-regular', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    left: 2vh;
+    line-height: 1.6;
+    text-align: left;
+}
+.budowa-tekst2 .powrot-btn video{
+    padding-top: 40%;
+    margin-left: -50%;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.powrot-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none !important;
+    box-shadow: none !important;
+    background: none !important;
+    padding: 0 !important;
+    margin: 1.5rem 0 0 0;
+    cursor: pointer;
+}
+
+.powrot-btn:hover {
+    filter: brightness(0.9);
+}
+
+.budowa-grafika {
+    display: flex;
+
+    justify-content: center;
+    width: 90%;
+}
+.budowa-grafika p {
+    position: absolute;
+    top: 10%;
+    left: 89%;
+    transform: translateX(-50%);
+    font-family: 'antio-regular', sans-serif;
+    font-size: 2rem;
+    text-shadow: 0 2px 4px #0006;
+    z-index: 3;
+}
+
+.grafika-wrap {
+    position: relative;
+    width: 80vw;
+    max-width: 700px;
+    aspect-ratio: 1/1.2;
+    margin: 0 ;
+}
+
+#organy {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+#organy-linie.linie {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+    display: block;
+}
+
+/* Numerki na grafice (przykład, jeśli chcesz dodać) */
+.numer {
+    position: static; /* lub usuń position:absolute jeśli było */
+    margin: 0;
+}
+.numer:hover {
+    filter: brightness(1.2);
+}
+.piszczalki-wrap {
+    position: relative;
+    width: 80vw;
+    
+    margin: 8vh auto 0 -9vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.piszczalki-header {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+
+.numer-big {
+    width: 80px;
+    height: 80px;
+    font-size: 2.8rem;
+    background: #b86d1c;
+    color: #fff;
+    font-family: 'antio-regular', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px #0003;
+    border: 6px solid #e0c7a0;
+}
+
+.piszczalki-title {
+    font-family: 'Lemon-tuesday';
+    font-size: 2.7rem;
+    color: #fff;
+    letter-spacing: 0.18em;
+    margin: 0;
+}
+
+.piszczalki-desc {
+    background: rgba(0,0,0,0.45);
+    color: #fff;
+    font-family: 'capsuula', sans-serif;
+    font-size: 2.1rem;
+    line-height: 1.2;
+    padding: 1.2rem 2.2rem;
+    border-radius: 10px;
+    margin-bottom: 2.5rem;
+    max-width: 100%;
+    box-shadow: 0 4px 24px #0004;
+}
+
+.piszczalki-powrot {
+    position: absolute;
+    right: 0;
+    bottom: -60px;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-family: 'antio-regular', sans-serif;
+    font-size: 1.5rem;
+    color: #3e2b13;
+    z-index: 2;
+}
+
+.piszczalki-powrot img {
+    height: 60px;
+    margin-right: 0.7rem;
+}
+
+#tytył h1 {
+    font-family: 'antio-regular', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.1em;
+    text-align: left;
+    padding-top: 1.2rem;
+    color: white;
+}
+
+/* Usuwa obramowanie z buttona z video */
+button:has(video) {
+    border: none !important;
+    box-shadow: none !important;
+    background: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    scale: 0.5 !important;
+}
+.title {
+      display: flex;
+      align-items: center;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.8em;
+      font-family: 'antio-regular';
+    }
+/* Responsywność */
+@media (max-width: 900px) {
+    main, .budowa-grid {
+        grid-template-columns: 1fr;
+        height: auto;
+        gap: 4vw;
+    }
+    .budowa-tekst {
+        max-width: 90vw;
+        min-width: unset;
+        margin: 0 auto;
+        padding: 6vw 4vw 2vw 4vw;
+    }
+    .grafika-wrap {
+        width: 90vw;
+        max-width: 98vw;
+        aspect-ratio: 1/1.2;
+    }
+}
+      </style>
+
+    </head>
+    <body><div style="background-color: rgba(255, 255, 255, 0.61); height: 100vh;" >
+        <main>
+  <div class="budowa-grid">
+    <section class="budowa-tekst2">
+      <div class="title">
+        <div style=" font-size: 4.1rem;">Średniowiecze</div>
+      </div>
+      <p>
+        Od VIII wieku organy trafiają do kościołów, choć początkowo ich obecność wzbudzała kontrowersje. Stopniowo stają się nieodłącznym elementem liturgii chrześcijańskiej, symbolizując potęgę i duchowość.
+        </p>
+      <button class="powrot-btn" onclick="location.href='epoki.html'"><video src="/assets/budowa/powrot.webm" type="video/webm" autoplay playsinline loop  ></video>
+      </button>
+    </section>
+
+
+   
+
+
+    <section class="budowa-grafika">
+        <p>średniowieczny portatyw</p>
+  <div class="grafika-wrap" style="position:relative; width: 90vw; max-width: 800px;">
+    <img id="organy" src="/assets/budowa/epoki/sredniowiecznyportatyw@1x.png" alt="Organy">
+    
+</section>
+  </div>
+</main>
+</div></body>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>

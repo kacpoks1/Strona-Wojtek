@@ -17,6 +17,12 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+        font-family: 'capsuula';
+        src: url('/fonts/Capsuula/Capsuula.ttf') format('trueType');
+        font-weight: normal;
+        font-style: normal;
+    }
 #piszczalki {
     background: url('/assets/budowa/photo/piszczalki-zdjecie@1x.png') no-repeat center center fixed;
     margin: 0;
@@ -299,7 +305,7 @@ main {
 .piszczalki-desc {
     background: rgba(0,0,0,0.45);
     color: #fff;
-    font-family: 'antio-regular', sans-serif;
+    font-family: 'capsuula', sans-serif;
     font-size: 2.1rem;
     line-height: 1.2;
     padding: 1.2rem 2.2rem;
