@@ -1,32 +1,144 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" href="style.css">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Dźwięk Dziedzictwa</title>
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    </head>
-    <body>
-        <main>
-            <div class="budowa-grid" style="grid-template-columns: 1.2fr 2fr;">
-                <section class="budowa-tekst2" style="align-items: flex-start; text-align: left;">
-                    <div style="display: flex; align-items: center; gap: 1.2rem; margin-bottom: 1.2rem;">
-                        <img src="/assets/budowa/Numerek 2@1x.png" alt="Numerek 1" style=" padding-top: 1.2rem; width: 150px; height: 150px;">
-                        <h1 style="margin: 0;">Szafa i Prospekt</h1>
-                    </div>
-                    <p>
-                        To piękna, ozdobna obudowa, w której ukryte są piszczałki i mechanizmy organów. Prospekt to przednia część tej szafy, często bogato rzeźbiona i złocona. Wiele osób myśli, że widzi całe organy, a tak naprawdę widzi tylko ich zewnętrzną część!
-                    </p>
-                    <button class="powrot-btn" onclick="location.href='../Budowa/budowa1.html'" style="margin-left:auto; margin-right:auto; display:flex; justify-content:center;">
-                        <video src="/assets/budowa/powrot.webm" type="video/webm" autoplay playsinline loop></video>
-                    </button>
-                </section>
-    <section class="budowa-grafika">
-      <img src="/assets/budowa/photo/szafaiprospekt-zdjecie@1x.png" alt="Szafa i Prospekt" style="width: 100%; height: auto; max-height: 85vh; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 32px #0002;">
-    </section>
-  </div>
-</main>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Prezentacja - Szafa i Prospekt</title>
+  <style>
+
+    @font-face {
+    font-family: 'Lemon-tuesday';
+    src: url('/fonts/lemon_tuesday/Lemon\ Tuesday.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'antio-regular';
+        src: url('/fonts/antio-regular/Antio-Regular/Antio\ Regular.otf') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'capsuula';
+        src: url('/fonts/Capsuula/Capsuula.ttf') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      font-family: "Georgia", serif;
+      background: url('/assets/BG-ORGANY.png') no-repeat center center fixed,
+    rgba(255, 255, 255, 0.699);
+
+    background-blend-mode: multiply;
+    background-size: cover;
+      overflow: hidden;
+      font-family: 'Lemon-tuesday', cursive, sans-serif;
+    }
+
+    /* Blokowanie prawego przycisku */
+    body {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    body:context-menu {
+      display: none;
+    }
+
+    /* Layout */
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      height: 100vh;
+      background-color: rgba(255, 255, 255, 0.699); ;
+    }
+
+    .left {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+      padding: 4rem;
+      margin-left: 4vh;
+    }
+
+    .title {
+      display: flex;
+      align-items: center;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .number {
+      background: #8c4b2f;
+      color: white;
+      font-weight: bold;
+      font-size: 1.5rem;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1rem;
+    }
+
+    .text {
+    font-size: 3.1rem;
+    line-height: 1.6;
+    max-width: 90%;
+    font-family: 'capsuula', sans-serif;
+    margin-left: 90px;
+    }
+
+    .back {
+      margin-top: 20vh;
+      align-self: flex-start;
+      background: none;
+      border: none;
+      font-size: 1rem;
+      color: #444;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      transition: color 0.3s;
+      height: 200px;
+      padding-bottom: 30vh;
+
+    }
+
+    .back:hover {
+      color: #000;
+    }
+
+    .right {
+      background: url("") no-repeat center center;
+      background-size: cover;
+    }
+  </style>
+</head>
+<body >
+  <div class="container">
+    <div class="left">
+      <div class="title">
+        <div class="number"><img src="/assets/budowa/Numerek 2@1x.png" alt="1"></div>
+        <div style="margin-left: 40px; font-size: 4.1rem;">SZAFA i PROSPEKT</div>
+      </div>
+      <div class="text">
+        To piękna, ozdobna obudowa, w której ukryte są piszczałki i mechanizmy organów. 
+        Prospekt to przednia część tej szafy, często bogato rzeźbiona i złocona. 
+        Wiele osób myśli, że widzi całe organy, a tak naprawdę widzi tylko ich zewnętrzną część!
+      </div>
+      <button class="back"onclick="location.href='../Budowa/budowa1.html'">
+        <video src="/assets/budowa/powrot.webm" type="video/webm" autoplay playsinline loop style="height: 30vh"></video>
+      </button>
+    </div>
+    <div class="right">
+        <img src="/assets/budowa/photo/szafaiprospekt-zdjecie@1x.png">
+    </div>
+</div>
 </body>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </html>
