@@ -124,6 +124,11 @@ main {
     box-shadow: none !important;
     background: none !important;
     padding: 0 !important;
+    font-family: 'antio-regular', sans-serif;
+}
+
+h1 button{
+    font-family: 'antio-regular', sans-serif;
 }
 
 .epoch-btn.top {
