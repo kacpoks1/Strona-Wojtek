@@ -71,6 +71,7 @@
       align-items: center;
       font-size: 1.8rem;
       margin-bottom: 1.5rem;
+        font-family: 'antio-regular', serif;
     }
 
     .number {
@@ -92,11 +93,13 @@
     line-height: 1.6;
     max-width: 90%;
     font-family: 'capsuula', sans-serif;
-    margin-left: 90px;
+    margin-left: 44px;
+    max-width: 900px;
     }
 
     .back {
-      margin-top: 20vh;
+      margin-top: 28vh;
+      margin-left: 55vh;
       align-self: flex-start;
       background: none;
       border: none;
@@ -105,13 +108,18 @@
       cursor: pointer;
       padding: 0.5rem 1rem;
       transition: color 0.3s;
-      height: 200px;
+      height: 150px;
       padding-bottom: 30vh;
 
     }
 
     .back:hover {
       color: #000;
+    }
+    .zdj{
+        height: 101vh;
+        margin-left: 14vh;
+        
     }
 
     .right {
@@ -124,20 +132,19 @@
   <div class="container">
     <div class="left">
       <div class="title">
-        <div class="number"><img src="/assets/budowa/Numerek 2@1x.png" alt="1"></div>
         <div style="margin-left: 40px; font-size: 4.1rem;">historia kazimierskich organów</div>
       </div>
       <div class="text">
-        Kazimierz Dolny to malownicze miasteczko nad Wisłą, które nazywa się „perłą renesansu”. Znajduje się tam jeden z najważniejszych zabytków – najstarsze w tej części Polski działające organy, które mają ponad 400 lat!</br>
+        Kazimierz Dolny to malownicze miasteczko nad Wisłą, które nazywa się „perłą renesansu”. Znajduje się tam jeden z najważniejszych zabytków – najstarsze w tej części Polski działające organy, które mają ponad 400 lat!<br><br>
         Kościół farny, gdzie stoją te wyjątkowe organy, powstał bardzo dawno temu, a pierwsze informacje o parafii są już z 1325 roku. Obecny budynek kościoła zbudowano po wielkim pożarze w XVI wieku. Odbudowę rozpoczęto w 1586 roku, a zakończono w 1612 roku. Już wtedy postanowiono, że w kościele powinien znaleźć się piękny instrument jakim są organy.
 
       </div>
-      <button class="back"onclick="location.href='../Budowa/budowa1.html'">
-        <video src="/assets/budowa/powrot.webm" type="video/webm" autoplay playsinline loop style="height: 30vh"></video>
+      <button class="back"onclick="location.href='historia2.html'">
+        <video src="/assets/przyciski/dalej.webm" type="video/webm" autoplay playsinline loop style="height: 15vh"></video>
       </button>
     </div>
     <div class="right">
-        <img src="../assets/kazimierskie/historiakaazimierskichorganow@1x.png">
+        <img class="zdj" src="/assets/kazimierskie/historiakaazimierskichorganow@1x.png"   alt="Kazimierskie organy" >
     </div>
 </div>
 </body>

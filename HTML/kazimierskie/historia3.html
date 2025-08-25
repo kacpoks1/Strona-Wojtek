@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Prezentacja - Szafa i Prospekt</title>
+  <style>
+
+    @font-face {
+    font-family: 'Lemon-tuesday';
+    src: url('/fonts/lemon_tuesday/Lemon\ Tuesday.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'antio-regular';
+        src: url('/fonts/antio-regular/Antio-Regular/Antio\ Regular.otf') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'capsuula';
+        src: url('/fonts/Capsuula/Capsuula.ttf') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      font-family: "Georgia", serif;
+      background: url('/assets/BG-ORGANY.png') no-repeat center center fixed,
+    rgba(255, 255, 255, 0.699);
+
+    background-blend-mode: multiply;
+    background-size: cover;
+      overflow: hidden;
+      font-family: 'Lemon-tuesday', cursive, sans-serif;
+    }
+
+    /* Blokowanie prawego przycisku */
+    body {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    body:context-menu {
+      display: none;
+    }
+
+    /* Layout */
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      height: 100vh;
+      background-color: rgba(255, 255, 255, 0.699); ;
+    }
+
+    .left {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+      padding: 4rem;
+      margin-left: 4vh;
+    }
+
+    .title {
+      display: flex;
+      align-items: center;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+        font-family: 'antio-regular', serif;
+    }
+
+    .number {
+      background: #8c4b2f;
+      color: white;
+      font-weight: bold;
+      font-size: 1.5rem;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1rem;
+    }
+
+    .text {
+    font-size: 2.1rem;
+    line-height: 1.6;
+    max-width: 90%;
+    font-family: 'capsuula', sans-serif;
+    margin-left: 44px;
+    max-width: 900px;
+    margin-top: 10vh;
+    }
+
+    .back {
+      margin-top: 25vh;
+      margin-left: 55vh;
+      align-self: flex-start;
+      background: none;
+      border: none;
+      font-size: 1rem;
+      color: #444;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      transition: color 0.3s;
+      height: 150px;
+      padding-bottom: 30vh;
+
+    }
+
+    .back:hover {
+      color: #000;
+    }
+    .zdj{
+        height: 100vh;
+        margin-left: 14.5vh;
+        
+    }
+
+    .right {
+      background: url("") no-repeat center center;
+      background-size: cover;
+    }
+  </style>
+</head>
+<body >
+  <div class="container">
+    <div class="left">
+      <div class="text">
+        Organy w kazimierskim kościele mają obecnie 1436 piszczałek, 35 głosów, dwie klawiatury dla rąk i jedną dla nóg. Są jednym z niewielu instrumentów w Europie z początku XVII wieku, które wciąż działają!<br><br>
+        Przez wieki były one naprawiane, m.in. po zniszczeniach przez Szwedów. Ostatni wielki remont odbył się w latach 1975–1982, a potem w 2012 roku. <br><br>
+        Obecnie organy są poddane gruntownemu remontowi, a po jego zakończeniu znów usłyszymy ten instrument w pełnej krasie!
+      </div>
+      <button class="back"onclick="location.href='../kazimierskie_organy.html'">
+        <video src="/assets/budowa/powrot.webm" type="video/webm" autoplay playsinline loop style="height: 15vh"></video>
+      </button>
+    </div>
+    <div class="right">
+        <img class="zdj" src="/assets/kazimierskie/historiakazimierskichorganow3@1x.png"   alt="Kazimierskie organy" >
+    </div>
+</div>
+</body>
+</html>
