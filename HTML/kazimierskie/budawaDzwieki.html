@@ -155,7 +155,7 @@
     model-viewer {
       position: fixed;
       top: 43%;
-      left: 50%;
+      left: 43%;
       transform: translate(-50%, -50%);
       width: 1000px;
       height: 1000px;
@@ -164,7 +164,7 @@
     }
   </style>
 </head>
-<body>
+<body><div style="background-color: rgba(255, 255, 255, 0.61); height: 100vh;">
   <main>
     <!-- Tytuł -->
     <div class="title">
@@ -187,19 +187,19 @@
     <div class="piszczalki">
       <div>
         <p>Piszczałka Principal</p>
-        <button class="buttons">
+        <button class="buttons dzwieki"  data-sound="../../assets/sounds/Piszczałka_Principal_reverb.mp3">
           <video src="../../assets/przyciski/glosniczek_1.webm" autoplay loop muted playsinline></video>
         </button>
       </div>
       <div>
         <p>Piszczałka Flute</p>
-        <button class="buttons">
+        <button class="buttons dzwieki"  data-sound="../../assets/sounds/Piszczałka_Flute_reverb.mp3">
           <video src="../../assets/przyciski/glosniczek_2.webm" autoplay loop muted playsinline></video>
         </button>
       </div>
       <div>
         <p>Piszczałka Oboe</p>
-        <button class="buttons">
+        <button class="buttons dzwieki"  data-sound="../../assets/sounds/Piszczałka_Oboe_reverb.mp3">
           <video src="../../assets/przyciski/glosniczek_3.webm" autoplay loop muted playsinline></video>
         </button>
       </div>
@@ -209,13 +209,13 @@
     <div class="utwory">
       <div>
         <p>Utwór Organowy</p>
-        <button class="buttons">
+        <button class="buttons dzwieki"  data-sound="../../assets/sounds/Koncert-organowy-Ave-Maria.mp3">
           <video src="../../assets/przyciski/glosniczek_1.webm" autoplay loop muted playsinline></video>
         </button>
       </div>
       <div>
         <p>Utwór Organowy</p>
-        <button class="buttons">
+        <button class="buttons dzwieki"  data-sound="../../assets/sounds/Muzyka-organowa-Toccata.mp3">
           <video src="../../assets/przyciski/glosniczek_2.webm" autoplay loop muted playsinline></video>
         </button>
       </div>
@@ -223,7 +223,7 @@
 
     <!-- Powrót -->
     <div class="powrot">
-      <button class="buttons2">
+      <button class="buttons2" onclick="location.href='../kazimierskie_organy.html'">
         <video src="../../assets/budowa/powrot.webm" autoplay loop muted playsinline></video>
       </button>
     </div>
@@ -258,8 +258,66 @@
     model.cameraOrbit = "0deg 90deg auto"; 
     model.jumpCameraToGoal(); 
   });
+
+  const piszczalki = document.querySelectorAll('.piszczalki .dzwieki');
+let currentPisczalka = null;
+
+piszczalki.forEach(btn => {
+  btn.addEventListener('click', () => {
+
+    if (currentPisczalka && !currentPisczalka.paused) {
+      fadeOut(currentPisczalka, 300); 
+    }
+
+ 
+    const sound = new Audio(btn.dataset.sound);
+    sound.volume = 1;
+    sound.currentTime = 0;
+    sound.play();
+    currentPisczalka = sound;
+
+
+    setTimeout(() => {
+      fadeOut(sound, 300); 
+    }, 4500);
+  });
+});
+
+
+function fadeOut(audio, duration) {
+  let fadeSteps = 10;
+  let stepTime = duration / fadeSteps;
+  let stepVolume = audio.volume / fadeSteps;
+
+  const fadeInterval = setInterval(() => {
+    audio.volume -= stepVolume;
+    if (audio.volume <= 0) {
+      audio.pause();
+      audio.currentTime = 0;
+      clearInterval(fadeInterval);
+    }
+  }, stepTime);
+}
+
+
+const utwory = document.querySelectorAll('.utwory .dzwieki');
+let currentTrack = null;
+
+utwory.forEach(btn => {
+  btn.addEventListener('click', () => {
+
+    if (currentTrack && !currentTrack.paused) {
+      currentTrack.pause();
+      currentTrack.currentTime = 0;
+    }
+
+
+    currentTrack = new Audio(btn.dataset.sound);
+    currentTrack.play();
+  });
+});
 </script>
   
 </script>
-</body>
+</div></body>
 </html>
