@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Ciekawostki</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @font-face {
+    font-family: 'antio-regular';
+    src: url('/fonts/antio-regular/Antio-Regular/Antio\ Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+    body {
+      margin:0;
+      padding:0;
+      background: url('/assets/BG-ORGANYb.png') center center no-repeat;
+      font-family: 'antio-regular', sans-serif;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      max-width: 1920px;
+      height: 100%;
+    }
+
+    h1 {
+      font-family: 'antio-regular', sans-serif;
+      font-size: 4.5rem;
+      letter-spacing: 0.15em;
+      margin-top: 50px;
+      margin-bottom: 100px;
+    }
+
+    .numbers {
+      display: flex;
+      gap: 120px;
+      margin-top: 19vh;
+    }
+
+    .numbers button {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .numbers img {
+      width: 160px;
+      height: 160px;
+      transition: transform 0.2s;
+    }
+
+    .numbers img:hover {
+      transform: scale(1.1);
+    }
+
+    .powrot {
+      position: absolute;
+      bottom: 60px;
+      left: 100vh;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .powrot img {
+      width: 200px;
+      height: auto;
+      transition: transform 0.2s;
+    }
+
+    .powrot img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 style="padding-left: 100px; padding-top: 100px;" >CIEKAWOSTKI</h1>
+    <div class="numbers">
+        <video src="../../assets/budowa/nacisnijnumer.webm" alt="kliknijnunmer" style="height: 20vh; margin-right: 14vh;" autoplay loop muted></video>
+      <button onclick="location.href='ciekawostka1.html'">
+        <img src="../../assets/budowa/Numerek 2@1x.png" alt="1">
+      </button>
+      <button onclick="location.href='ciekawostka2.html'">
+        <img src="../../assets/budowa/Numerek 7@1x.png" alt="2">
+      </button>
+      <button onclick="location.href='ciekawostka3.html'">
+        <img src="../../assets/budowa/Numerek 6@1x.png" alt="3">
+      </button>
+    </div>
+
+    <button class="powrot" onclick="location.href='../kazimierskie_organy.html'">
+      <video src="../../assets/budowa/powrot.webm" alt="Powrót" autoplay loop muted playsinline style="height: 20vh;"></video>
+    </button>
+  </div>
+</body>
+</html>
