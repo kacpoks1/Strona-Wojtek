@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>SPRAWDŹ SIĘ! – Quiz</title>
+  <style>
+    :root {
+      --paper-bg: #f5f1e7 url('') center/cover no-repeat;
+      --ink: #1e1c19;
+      --beige: #e3cfa7;
+      --beige-hover:#dec696;
+      --accent:#b18a57;
+      --font-display:'MojaCzcionka', sans-serif;
+    }
+
+    @font-face {
+      font-family: 'Lemon-tuesday';
+      src: url('/fonts/lemon_tuesday/Lemon\ Tuesday.otf') format('opentype');
+      font-weight: lighter;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'antio-regular';
+      src: url('/fonts/antio-regular/Antio-Regular/Antio\ Regular.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'capsuula';
+      src: url('/fonts/Capsuula/Capsuula.ttf') format('truetype');
+      font-weight: lighter;
+      font-style: normal;
+    }
+
+    body {
+      margin:0;
+      background: url('/assets/BG-ORGANYb.png') center;
+      color:var(--ink);
+      font-family: 'antio-regular';
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:20px;
+    }
+    .container {
+      max-width:1900px;
+      width:100%;
+      height:95vh;
+    }
+    .title {
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-weight:100;
+      font-size:clamp(28px,5vw,56px);
+      margin:20px 0;
+    }
+    .question {
+      text-transform:uppercase;
+      letter-spacing:.06em;
+      font-weight:100;
+      margin:17vh 40vh 21vh;
+      max-width:900px;
+      font-size:3.2rem;
+    }
+    .answers {
+      display:grid;
+      grid-template-columns:repeat(4, minmax(200px,1fr));
+      gap:30px;
+      justify-items:center;
+      height:30vh;
+    }
+    .btn {
+      background:var(--beige);
+      border:none;
+      border-radius:28px;
+      padding:30px 20px;
+      text-transform:uppercase;
+      letter-spacing:.05em;
+      cursor:pointer;
+      max-width:360px;
+      width:100%;
+      line-height:1.2;
+      transition:.2s;
+      font-family:'antio-regular';
+      font-weight:100;
+      font-size:2.5rem;
+    }
+    .btn:hover { background:var(--beige-hover); transform:scale(1.03); }
+    .btn.correct { outline:4px solid #2fa35e; }
+    .btn.wrong   { outline:4px solid #c95353; }
+
+    .hint { margin-top:20px; color:var(--accent); font-weight:800; font-size:clamp(14px,2vw,20px); letter-spacing:.06em; }
+
+    .kliknij {
+      width:35vh; height:auto; position:absolute; top:20px; right:20px;
+    }
+
+    @media (max-width:700px){ .answers{ grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title" style="font-family:'antio-regular';">
+      SPRAWDŹ SIĘ!
+      <video class="kliknij" src="../assets/przyciski/KLIKNIJODPOWIEDZ.webm" autoplay muted loop></video>
+    </div>
+    <div id="quiz"></div>
+    <div class="hint"></div>
+  </div>
+
+<script>
+  // Pytania + odpowiedzi (4 warianty) – indeksy odpowiedzi liczone 1..4
+  const questions = [
+    {q:"Skąd wywodzą się organy?",a:["Starożytnego Cesarstwa Rzymskiego","Barokowej Europy","Starożytnej Grecji i Aleksandrii","Ameryki Południowej"]},
+    {q:"Do czego służyły organy w starożytnej Grecji?",a:["Do grania w świątyniach","Do nauki matematyki","Do zabaw i igrzysk","Do medytacji"]},
+    {q:"W jakiej epoce organy trafiają do kościołów?",a:["Starożytność","Średniowiecze","Renesans","Barok"]},
+    {q:"Gdzie znajdują się najstarsze działające organy w Polsce?",a:["W Gdyni","W Warszawie","W Nowym Sączu","W Kazimierzu Dolnym"]},
+    {q:"Ile lat mają organy w Kazimierzu Dolnym?",a:["100","200","300","400"]},
+    {q:"W jakim stylu zostały wykonane organy kazimierskie?",a:["Renesansowym","Barokowym","Klasycystycznym","Średniowiecznym"]},
+    {q:"W którym roku powstały organy (data na ich froncie)?",a:["1620","1800","1555","1267"]},
+    {q:"Nad jaką rzeką leży Kazimierz Dolny?",a:["Warta","Odra","Bug","Wisła"]},
+    {q:"Ile piszczałek mają kazimierskie organy?",a:["256","514","536","920"]},
+    {q:"Gdzie w Kazimierzu Dolnym znajdują się organy?",a:["W Urzędzie Miasta","W Muzeum Kazimierskim","W Kazimierskiej Farze","W klasztorze Franciszkanów"]},
+  ];
+  // Prawidłowe odpowiedzi (1-based) zgodnie z PDF: 3,3,2,4,4,1,1,4,2,3
+  const correct = [3,3,2,4,4,1,1,4,2,3];
+
+  let current = 0;
+  let score = 0;
+  let locked = false; // blokada przed wielokrotnym kliknięciem tego samego pytania
+
+  const quizDiv = document.getElementById('quiz');
+
+  function showQuestion(){
+    if(current >= questions.length){
+      return showResult();
+    }
+    const q = questions[current];
+    locked = false;
+    quizDiv.innerHTML = `
+      <div class="question">${q.q}</div>
+      <div class="answers">
+        ${q.a.map((ans,i)=>`<button class="btn" onclick="check(${i+1},this)">${ans}</button>`).join('')}
+      </div>`;
+  }
+
+  function check(choice, btn){
+    if(locked) return;          // nic nie rób, jeśli już kliknięto
+    locked = true;
+
+    const buttons = quizDiv.querySelectorAll('.btn');
+    const isCorrect = (choice === correct[current]);
+
+    if(isCorrect){
+      score++;
+      btn.classList.add('correct');
+    }else{
+      btn.classList.add('wrong');
+      // podświetl poprawną
+      const idx = correct[current] - 1;
+      if(buttons[idx]) buttons[idx].classList.add('correct');
+    }
+
+    buttons.forEach(b => b.disabled = true);
+
+    // przejście do kolejnego pytania
+    setTimeout(() => { current++; showQuestion(); }, 900);
+  }
+
+  // PRZEKIEROWANIE na trzy osobne podstrony
+  function showResult(){
+    if(score <= 3){
+      window.location.href = "../HTML/wyniki/wynik-low.html";
+    } else if(score <= 7){
+      window.location.href = "../HTML/wyniki/wynik-mid.html";
+    } else {
+      window.location.href = "../HTML/wyniki/wynik-high.html";
+    }
+  }
+
+  // start
+  showQuestion();
+</script>
+</body>
+</html>
