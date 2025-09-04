@@ -6,20 +6,20 @@
 
 @font-face {
     font-family: 'Lemon-tuesday';
-    src: url('/fonts/lemon_tuesday/Lemon\ Tuesday.otf') format('opentype');
+    src: url('../fonts/lemon_tuesday/Lemon\ Tuesday.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'antio-regular';
-    src: url('/fonts/antio-regular/Antio-Regular/Antio\ Regular.otf') format('opentype');
+    src: url('../fonts/antio-regular/Antio-Regular/Antio\ Regular.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
         font-family: 'capsuula';
-        src: url('/fonts/Capsuula/Capsuula.ttf') format('trueType');
+        src: url('../fonts/Capsuula/Capsuula.ttf') format('trueType');
         font-weight: normal;
         font-style: normal;
     }

@@ -18,27 +18,27 @@
 
     @font-face {
     font-family: 'Lemon-tuesday';
-    src: url('/fonts/lemon_tuesday/Lemon\ Tuesday.otf') format('opentype');
+    src: url('../fonts/lemon_tuesday/Lemon\ Tuesday.otf') format('opentype');
     font-weight: lighter;
     font-style: normal;
     }
 
     @font-face {
         font-family: 'antio-regular';
-        src: url('/fonts/antio-regular/Antio-Regular/Antio\ Regular.otf') format('opentype');
+        src: url('../fonts/antio-regular/Antio-Regular/Antio\ Regular.otf') format('opentype');
         font-weight: normal;
         font-style: normal;
     }
     @font-face {
             font-family: 'capsuula';
-            src: url('/fonts/Capsuula/Capsuula.ttf') format('trueType');
+            src: url('../fonts/Capsuula/Capsuula.ttf') format('trueType');
             font-weight: lighter;
             font-style: normal;
 }   
 
     body {
       min-height: 100vh;
-      background: url('/assets/BG-ORGANY.png') no-repeat center center fixed,
+      background: url('../assets/BG-ORGANY.png') no-repeat center center fixed,
                   rgba(255,255,255,0.6);
       background-blend-mode: multiply;
       background-size: cover;
@@ -174,12 +174,12 @@
     <!-- Lewa strona -->
     <div class="obroc">
       <button class="buttons2" id="obrot">
-        <video src="../../assets/przyciski/obroc.webm" autoplay loop muted playsinline></video>
+        <video src="../assets/przyciski/obroc.webm" autoplay loop muted playsinline></video>
     </button>
     </div>
     <div class="posluchaj" style="margin-top: 45vh;">
       <button class="buttons2" id="obrot">
-        <video src="../../assets/przyciski/kliknijiposluchaj.webm" autoplay loop muted playsinline></video>
+        <video src="../assets/przyciski/kliknijiposluchaj.webm" autoplay loop muted playsinline></video>
       </button>
     </div>
 
@@ -188,19 +188,19 @@
       <div>
         <p>Piszczałka Principal</p>
         <button class="buttons dzwieki"  data-sound="../../assets/sounds/Piszczałka_Principal_reverb.mp3">
-          <video src="../../assets/przyciski/glosniczek_1.webm" autoplay loop muted playsinline></video>
+          <video src="../assets/przyciski/glosniczek_1.webm" autoplay loop muted playsinline></video>
         </button>
       </div>
       <div>
         <p>Piszczałka Flute</p>
         <button class="buttons dzwieki"  data-sound="../../assets/sounds/Piszczałka_Flute_reverb.mp3">
-          <video src="../../assets/przyciski/glosniczek_2.webm" autoplay loop muted playsinline></video>
+          <video src="../assets/przyciski/glosniczek_2.webm" autoplay loop muted playsinline></video>
         </button>
       </div>
       <div>
         <p>Piszczałka Oboe</p>
         <button class="buttons dzwieki"  data-sound="../../assets/sounds/Piszczałka_Oboe_reverb.mp3">
-          <video src="../../assets/przyciski/glosniczek_3.webm" autoplay loop muted playsinline></video>
+          <video src="../assets/przyciski/glosniczek_3.webm" autoplay loop muted playsinline></video>
         </button>
       </div>
     </div>
@@ -210,13 +210,13 @@
       <div>
         <p>Utwór Organowy</p>
         <button class="buttons dzwieki"  data-sound="../../assets/sounds/Koncert-organowy-Ave-Maria.mp3">
-          <video src="../../assets/przyciski/glosniczek_1.webm" autoplay loop muted playsinline></video>
+          <video src="../assets/przyciski/glosniczek_1.webm" autoplay loop muted playsinline></video>
         </button>
       </div>
       <div>
         <p>Utwór Organowy</p>
         <button class="buttons dzwieki"  data-sound="../../assets/sounds/Muzyka-organowa-Toccata.mp3">
-          <video src="../../assets/przyciski/glosniczek_2.webm" autoplay loop muted playsinline></video>
+          <video src="../assets/przyciski/glosniczek_2.webm" autoplay loop muted playsinline></video>
         </button>
       </div>
     </div>
@@ -224,7 +224,7 @@
     <!-- Powrót -->
     <div class="powrot">
       <button class="buttons2" onclick="location.href='kazimierskie_organy.html'">
-        <video src="../../assets/budowa/powrot.webm" autoplay loop muted playsinline></video>
+        <video src="../assets/budowa/powrot.webm" autoplay loop muted playsinline></video>
       </button>
     </div>
   </main>
@@ -232,7 +232,7 @@
   <!-- Model 3D -->
   <model-viewer
   id="organy"
-  src="../../assets/organy3d.glb"
+  src="../assets/organy3d.glb"
   alt="avatar"
   shadow-intensity="1"
   camera-controls
